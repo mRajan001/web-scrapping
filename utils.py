@@ -38,7 +38,7 @@ def get_price(url, block_id, price_section_id):
     price =  price[0]
     return re.sub('[£$,]', '', price) #remove currency symbol    
 
-def gallery_element(url, gallery_id, tag):
+def gallery_element(url, gallery_id, tag, alt_tag):
     page = requests.get(url)
     soup = BeautifulSoup(page.content, "html.parser")        
 
@@ -46,7 +46,12 @@ def gallery_element(url, gallery_id, tag):
     gallery_root = gallery.find_all(tag)
     gallery_description = [i.text for i in gallery_root][:3]
     gallery_description.sort()
-    if 'x' not in str(gallery_description[0]).lower():
+
+    if len(gallery_description) == 0:
+        gallery_root = gallery.find_all(alt_tag)
+        gallery_description = [i.text for i in gallery_root][:3]
+        gallery_description.sort()        
+    elif 'x' not in str(gallery_description[0]).lower():
         del gallery_description[0]
     elif '2019' in gallery_description[1]:
         del gallery_description[1]
