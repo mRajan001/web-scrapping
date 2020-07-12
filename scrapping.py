@@ -7,7 +7,7 @@ import pandas as pd
 main_body_id = "_1TImB"
 price_section_id = "_2sFaY"
 gallery_id = "_3cRjW"#"_28cEs"
-URL = "https://www.bearspace.co.uk/purchase?page=10"
+URL = "https://www.bearspace.co.uk/purchase?page=11"
 block_id = "_3Xnzg"
 
 products = available_listings(URL, block_id) #find the available products (except out of stock)
@@ -22,7 +22,7 @@ for product in products:
     # print(price)
     # gallery_soup = soup_content(product, gallery_id)
     # gallery_root = gallery_soup.find("p")
-    gallery_description = gallery_element(product, gallery_id, "p") #upto here this is dn
+    gallery_description = gallery_element(product, gallery_id, "p", "pre") #upto here this is dn
     # print(gallery_description)
     media, width, height = get_media_n_dimension(gallery_description)
     print("URL: {}, Title: {}, Media: {}, Width: {}, Height: {}".format(product, title, media, width, height))
@@ -40,5 +40,3 @@ print(listings)
 df = pd.DataFrame.from_dict(listings)
 
 df.to_csv("py_listings.csv")
-
-
