@@ -85,7 +85,7 @@ def gallery_element(url, gallery_id, tag, alt_tag):
     if len(gallery_description) == 0: #if tag "p" is not present, gallery_description could be just within tag "pre"
         gallery_root = gallery.find_all(alt_tag) #get the information from "pre" tag.
         gallery_description = [i.text for i in gallery_root][:3] #all the required infomation are within this range
-        gallery_description.sort()        
+        gallery_description.sort()
     
     #media, width and height are randomly placed within the gallery section for some listings.
 
