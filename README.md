@@ -1,4 +1,4 @@
-#Scraping Assessment
+# Scraping Assessment
 
 I was looking for a challenge for a web crawling and somewhere, I found a task to crawl a webpage: https://www.bearspace.co.uk/purchase
 
