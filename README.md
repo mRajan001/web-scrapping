@@ -16,7 +16,7 @@ directory. The CSV should have the following format :
 
 | url | title | media | height_cm | width_cm | price_gbp | 
 | ------ | ------ | ------ | ------ | ------ | ------ |
-| www.product_page.com | canvas | The artistic  | 25 | 25 | 350 |
+| www.product_page.com | canvas by Alice | The artistic  | 25 | 25 | 350 |
 
 
 ### Dependancies 
